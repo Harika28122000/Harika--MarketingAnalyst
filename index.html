@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harika Medishetty | Marketing Data Analyst</title>
+<meta name="description" content="Marketing Data Analyst portfolio for Harika Medishetty featuring campaign analytics, customer segmentation, A/B testing, attribution, retention analytics, SQL, Tableau, Power BI, GA4 and Python.">
+
+<style>
+:root{
+  --bg:#f8f6f1;
+  --paper:#ffffff;
+  --ink:#101820;
+  --muted:#56606a;
+  --brown:#9b623d;
+  --green:#3f725c;
+  --line:#e8e4dc;
+  --soft:#f2f3ef;
+  --max:1500px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  background:var(--bg);
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.container{
+  width:min(var(--max),calc(100% - 56px));
+  margin:auto;
+}
+
+/* HERO */
+.hero{
+  min-height:500px;
+  display:grid;
+  grid-template-columns:48% 52%;
+  background:#f8f6f1;
+  border-bottom:1px solid var(--line);
+}
+.hero-copy{
+  padding:34px 42px 36px 46px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.kicker{
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.30em;
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+h1{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(42px,4.8vw,72px);
+  line-height:1.03;
+  letter-spacing:-.045em;
+  font-weight:700;
+  margin:0 0 18px;
+}
+h1 .accent{color:var(--brown)}
+.hero-copy > p{
+  max-width:720px;
+  color:#35414a;
+  font-size:18px;
+  line-height:1.55;
+  margin:0 0 24px;
+}
+.specialties{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:16px;
+  max-width:760px;
+  margin:4px 0 26px;
+}
+.specialty{
+  min-width:0;
+}
+.icon{
+  height:34px;
+  margin-bottom:9px;
+  font-size:30px;
+  color:var(--green);
+  line-height:1;
+}
+.specialty span{
+  display:block;
+  font-size:13px;
+  line-height:1.35;
+}
+.actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:14px 22px;
+  border-radius:8px;
+  font-size:14px;
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  border:1px solid #9d8c7c;
+  background:#fff;
+}
+.btn.primary{
+  background:var(--brown);
+  border-color:var(--brown);
+  color:#fff;
+}
+.hero-photo{
+  position:relative;
+  overflow:hidden;
+  min-height:500px;
+}
+.hero-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+/* FEATURED */
+.featured{
+  background:#fff;
+  padding:24px 0 36px;
+  border-bottom:1px solid var(--line);
+}
+.featured-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:24px;
+  padding:0 12px 18px;
+}
+.featured h2{
+  font-size:34px;
+  margin:0 0 6px;
+  letter-spacing:-.035em;
+}
+.featured-head p{
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+}
+.view-all{
+  font-size:14px;
+  font-weight:600;
+  white-space:nowrap;
+}
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+}
+.project{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 7px 24px rgba(20,29,38,.06);
+  transition:.2s ease;
+  min-width:0;
+}
+.project:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px rgba(20,29,38,.10);
+}
+.project img{
+  width:100%;
+  aspect-ratio:1.68/1;
+  object-fit:cover;
+  border-bottom:1px solid var(--line);
+}
+.project-body{padding:14px 14px 16px}
+.project h3{
+  font-size:17px;
+  line-height:1.25;
+  margin:0 0 9px;
+  letter-spacing:-.02em;
+}
+.project p{
+  color:#4f5861;
+  font-size:13px;
+  line-height:1.55;
+  margin:0;
+}
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:13px;
+}
+.tag{
+  border-radius:999px;
+  padding:6px 10px;
+  background:#f1f3f4;
+  color:#28323b;
+  font-size:11px;
+}
+.case-link{
+  display:inline-block;
+  margin-top:13px;
+  color:var(--brown);
+  font-size:12px;
+  font-weight:800;
+}
+
+/* ABOUT/EXPERIENCE */
+.section{
+  padding:70px 0;
+}
+.section-label{
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+  color:var(--brown);
+  margin-bottom:12px;
+}
+.section h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:44px;
+  letter-spacing:-.04em;
+  margin:0 0 14px;
+}
+.section-intro{
+  max-width:850px;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.75;
+}
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-top:30px;
+}
+.metric{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px;
+}
+.metric strong{
+  display:block;
+  font-family:Georgia,serif;
+  font-size:34px;
+  color:var(--green);
+  margin-bottom:5px;
+}
+.metric span{
+  color:var(--muted);
+  font-size:13px;
+}
+.experience-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:30px;
+}
+.exp-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:24px;
+}
+.exp-card h3{
+  margin:0 0 5px;
+  font-size:22px;
+}
+.exp-meta{
+  color:var(--brown);
+  font-weight:700;
+  font-size:13px;
+  margin-bottom:14px;
+}
+.exp-card li{
+  color:var(--muted);
+  line-height:1.6;
+  margin:8px 0;
+  font-size:14px;
+}
+
+/* SKILLS */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:26px;
+}
+.skill-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px;
+}
+.skill-card h3{margin:0 0 10px;font-size:18px}
+.skill-card p{margin:0;color:var(--muted);line-height:1.65;font-size:14px}
+
+/* CONTACT */
+.contact-wrap{
+  background:#1f2a26;
+  color:#fff;
+  border-radius:18px;
+  padding:34px;
+  display:grid;
+  grid-template-columns:1.4fr .6fr;
+  gap:30px;
+}
+.contact-wrap h2{
+  margin:0 0 12px;
+  font-size:38px;
+  font-family:Georgia,serif;
+}
+.contact-wrap p{
+  color:#d7dedb;
+  line-height:1.7;
+  margin:0;
+}
+.contact-links{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  justify-content:center;
+  font-size:14px;
+}
+.contact-links a{color:#fff}
+footer{
+  text-align:center;
+  color:#737b82;
+  font-size:12px;
+  padding:30px 0 44px;
+}
+
+@media(max-width:1200px){
+  .project-grid{grid-template-columns:repeat(3,1fr)}
+  .specialties{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-photo{min-height:380px}
+  .project-grid{grid-template-columns:repeat(2,1fr)}
+  .metrics,.experience-grid,.skills{grid-template-columns:1fr 1fr}
+  .contact-wrap{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .container{width:min(var(--max),calc(100% - 28px))}
+  .hero-copy{padding:42px 24px}
+  .specialties{grid-template-columns:1fr 1fr}
+  .project-grid,.metrics,.experience-grid,.skills{grid-template-columns:1fr}
+  .featured-head{align-items:flex-start;flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="kicker">Marketing Data Analyst</div>
+
+    <h1>
+      Turning Marketing Data<br>
+      into <span class="accent">Measurable Growth</span>
+    </h1>
+
+    <p>
+      I analyze customer behavior, campaign performance, and market trends
+      to help businesses make data-driven marketing decisions.
+    </p>
+
+    <div class="specialties">
+      <div class="specialty">
+        <div class="icon">▥</div>
+        <span>Campaign<br>Analytics</span>
+      </div>
+      <div class="specialty">
+        <div class="icon">♟</div>
+        <span>Customer<br>Insights</span>
+      </div>
+      <div class="specialty">
+        <div class="icon">↗</div>
+        <span>A/B Testing<br>& Optimization</span>
+      </div>
+      <div class="specialty">
+        <div class="icon">◎</div>
+        <span>Attribution<br>& ROI</span>
+      </div>
+      <div class="specialty">
+        <div class="icon">◫</div>
+        <span>Data Visualization<br>& Storytelling</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="btn primary" href="#projects">View My Work <span>→</span></a>
+      <a class="btn" href="Harika_Medishetty_Resume.pdf" target="_blank">Download Resume <span>↓</span></a>
+    </div>
+  </div>
+
+  <div class="hero-photo">
+    <img src="assets/hero_marketing_analyst.png" alt="Marketing analyst reviewing campaign performance dashboard">
+  </div>
+</section>
+
+<section class="featured" id="projects">
+  <div class="container">
+    <div class="featured-head">
+      <div>
+        <h2>Featured Projects</h2>
+        <p>Real-world marketing problems, solved with data.</p>
+      </div>
+      <a class="view-all" href="https://github.com/Harika28122000" target="_blank" rel="noopener noreferrer">
+        View All Projects&nbsp;&nbsp;→
+      </a>
+    </div>
+
+    <div class="project-grid">
+
+      <article class="project">
+        <img src="assets/project_campaign.png" alt="Campaign performance dashboard">
+        <div class="project-body">
+          <h3>Multi-Channel Campaign Performance</h3>
+          <p>
+            Analyzed marketing spend, impressions, clicks, conversions, CAC, revenue,
+            and ROAS across multiple channels to identify optimization opportunities.
+          </p>
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Power BI</span>
+          </div>
+          <a class="case-link" href="https://github.com/Harika28122000/multi-channel-campaign-performance" target="_blank" rel="noopener noreferrer">View Case Study →</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <img src="assets/project_segmentation.png" alt="Customer segmentation analysis">
+        <div class="project-body">
+          <h3>Behavioral Customer Segmentation</h3>
+          <p>
+            Used behavioral and customer-value data to segment audiences and identify
+            high-value groups for targeted marketing.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Clustering</span>
+          </div>
+          <a class="case-link" href="https://github.com/Harika28122000/behavioral-customer-segmentation" target="_blank" rel="noopener noreferrer">View Case Study →</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <img src="assets/project_ab_testing.png" alt="A/B testing comparison">
+        <div class="project-body">
+          <h3>A/B Testing & Funnel Optimization</h3>
+          <p>
+            Designed and analyzed A/B tests, identified funnel drop-offs, and evaluated
+            conversion lift using statistical methods.
+          </p>
+          <div class="tags">
+            <span class="tag">A/B Testing</span>
+            <span class="tag">CRO</span>
+            <span class="tag">GA4</span>
+          </div>
+          <a class="case-link" href="https://github.com/Harika28122000/ab-testing-funnel-optimization" target="_blank" rel="noopener noreferrer">View Case Study →</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <img src="assets/project_attribution.png" alt="Multi-touch attribution customer journey">
+        <div class="project-body">
+          <h3>Multi-Touch Attribution Modeling</h3>
+          <p>
+            Analyzed customer journeys across channels and compared attribution models
+            to understand true channel contribution.
+          </p>
+          <div class="tags">
+            <span class="tag">Attribution</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Python</span>
+          </div>
+          <a class="case-link" href="https://github.com/Harika28122000/multi-touch-attribution-modeling" target="_blank" rel="noopener noreferrer">View Case Study →</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <img src="assets/project_retention.png" alt="Customer retention and lifetime value analysis">
+        <div class="project-body">
+          <h3>Customer Retention & Lifetime Value</h3>
+          <p>
+            Analyzed tenure, purchase behavior, churn risk, and CLV to identify
+            retention opportunities and growth strategies.
+          </p>
+          <div class="tags">
+            <span class="tag">CLV</span>
+            <span class="tag">Churn</span>
+            <span class="tag">Cohort Analysis</span>
+          </div>
+          <a class="case-link" href="https://github.com/Harika28122000/customer-retention-churn-clv" target="_blank" rel="noopener noreferrer">View Case Study →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-label">About</div>
+    <h2>Marketing analytics built around business decisions.</h2>
+    <p class="section-intro">
+      Marketing Data Analyst with 4+ years of experience leveraging SQL, Tableau,
+      Power BI, Google Analytics, customer segmentation, experimentation, attribution,
+      and marketing performance analysis to support data-driven decision-making.
+    </p>
+
+    <div class="metrics">
+      <div class="metric"><strong>18%</strong><span>Conversion-rate improvement</span></div>
+      <div class="metric"><strong>12%</strong><span>Reduction in customer acquisition cost</span></div>
+      <div class="metric"><strong>15+</strong><span>A/B tests designed and analyzed</span></div>
+      <div class="metric"><strong>10+</strong><span>Marketing KPI dashboards built</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#f2f0ea;">
+  <div class="container">
+    <div class="section-label">Experience</div>
+    <h2>Turning marketing performance into action.</h2>
+
+    <div class="experience-grid">
+      <article class="exp-card">
+        <h3>Marketing Data Analyst · DoorDash</h3>
+        <div class="exp-meta">United States · Jan 2025 – Present</div>
+        <ul>
+          <li>Analyzed digital, email, and paid-media campaign performance, contributing to an 18% conversion-rate improvement and 12% CAC reduction.</li>
+          <li>Built and maintained 10+ SQL and Tableau dashboards covering conversion rate, CAC, CLV, and campaign KPIs.</li>
+          <li>Partnered with product, creative, and data science teams to design and evaluate 15+ A/B tests.</li>
+          <li>Identified five high-value audience segments to support personalized marketing and budget allocation decisions.</li>
+        </ul>
+      </article>
+
+      <article class="exp-card">
+        <h3>Marketing Analyst · Intex Technologies</h3>
+        <div class="exp-meta">India · Mar 2020 – Aug 2023</div>
+        <ul>
+          <li>Executed end-to-end marketing analytics for 20+ B2B and B2C campaigns, improving targeting accuracy by 15%.</li>
+          <li>Tracked CTR, cost per lead, conversion performance, and ROAS across 6+ digital channels using Excel, SQL, and Google Analytics.</li>
+          <li>Delivered optimization recommendations that improved ROAS by 12% and click-through rate by 8%.</li>
+          <li>Developed customer personas and journey maps and led competitive analysis supporting campaign launches.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-label">Skills</div>
+    <h2>Marketing analytics technology stack.</h2>
+
+    <div class="skills">
+      <div class="skill-card">
+        <h3>Analytics & BI</h3>
+        <p>SQL, BigQuery, Azure SQL, Power BI, Tableau, Looker, Looker Studio, Excel, VBA, Pivot Tables, executive reporting.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Web & Marketing Analytics</h3>
+        <p>GA4, Adobe Analytics, Google Tag Manager, conversion tracking, pixel implementation, eCommerce analytics, SEO/SEM.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Customer & Experimentation</h3>
+        <p>Customer segmentation, A/B testing, multivariate testing, funnel analysis, CRO, cohort analysis, CLV, churn.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Marketing Technology</h3>
+        <p>HubSpot, Marketo, Salesforce CRM, paid media, social media analytics, email marketing, programmatic advertising.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Marketing Measurement</h3>
+        <p>Multi-touch attribution, data-driven attribution, marketing mix modeling, CAC, ROAS, CTR, CPL, conversion rate.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Programming & Data</h3>
+        <p>Python, Pandas, NumPy, R, Microsoft Azure, statistical analysis, automated reporting, data-quality validation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-wrap">
+      <div>
+        <h2>Let's turn marketing data into growth.</h2>
+        <p>
+          Open to opportunities in Marketing Analytics, Marketing Data Analytics,
+          Customer Insights, Digital Analytics, Growth Analytics, Campaign Analytics,
+          and Business Intelligence.
+        </p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:gharika735@gmail.com">gharika735@gmail.com</a>
+        <a href="tel:+13139032546">+1 (313) 903-2546</a>
+        <a href="https://github.com/Harika28122000" target="_blank" rel="noopener noreferrer">github.com/Harika28122000</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Harika Medishetty · Marketing Data Analyst Portfolio
+</footer>
+
+</body>
+</html>
